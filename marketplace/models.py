@@ -9,8 +9,8 @@ class Category(models.Model):
         return self.name
     
 class Product(models.Model):
-    farmer = models.ForeignKey(User, on_delete=models.CASCADE, related_name='products')
-    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True,related_name = 'products')
+    farmer = models.ForeignKey(User, on_delete=models.CASCADE, related_name='market_place_products')
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True,related_name = 'market_place_products')
     name = models.CharField(max_length=100)
     description = models.TextField(blank=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)
